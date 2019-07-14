@@ -1,4 +1,4 @@
-const journal = require('./data/journal');
+const journal = require('./data/ch04-journal');
 
 // To compute the phi coefficient value.
 function phi(table) {
