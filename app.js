@@ -2,6 +2,7 @@ const express = require('express'),
   app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/js'));
 app.engine('html', require('ejs').renderFile);
 
 app.get('/:fileName', (req, res) => {
