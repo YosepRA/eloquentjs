@@ -165,16 +165,18 @@ function lazyRobot({ place, parcels }, route) {
         return { route: findRoute(roadGraph, place, parcel.address), pickUp: false };
       }
     });
-    // Scoring each parcel's route. Parcels that needs to be picked up OR ~
-    // ~ the shorter route's length will yield the better score.
-    function scores({ route, pickUp }) {
-      return (pickUp ? 0.5 : 0) - route.length;
-    }
+
     // Choosing which route to pick by scoring each of it.
     route = routes.reduce((a, b) => (scores(a) > scores(b) ? a : b)).route;
   }
   // If there is still place(s) to go in route array. then keep going.
   return { direction: route[0], memory: route.slice(1) };
+
+  // Scoring each parcel's route. Parcels that needs to be picked up OR ~
+  // ~ the shorter route's length will yield the better score.
+  function scores({ route, pickUp }) {
+    return (pickUp ? 0.5 : 0) - route.length;
+  }
 }
 
 VillageState.random = function(parcelCount = 5) {
