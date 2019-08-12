@@ -18,5 +18,5 @@ console.log(ages.get('Boris')); // 19
 console.log(ages.get('Julia')); // 23
 
 // ("propertyName" in object) searches for property name inside an object tree.
-// console.log('Alex' in ages);
-// console.log('toString' in ages);
+console.log('Alex' in ages);
+console.log('toString' in ages);
