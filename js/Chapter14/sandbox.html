@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SandBox</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- <main id="main">
+    <h1>This is an ultimate sandbox</h1>
+    <p>There is really <strong>nothing</strong> to see here... But is it?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <strong>Distinctio, labore!</strong></p>
+    <a href="https://google.com">Go to Google</a>
+  </main> -->
+
+  <p style="text-align: center">
+    <img src="./nanako.png" style="position: relative">
+  </p>
+
+  <!-- <p><span id="one"></span></p>
+  <p><span id="two"></span></p>
+  <script>
+    function time(name, action) {
+      let start = Date.now();
+      action();
+      console.log(name, 'took', Date.now() - start, 'ms');
+    }
+    time('naive', () => {
+      let target = document.getElementById('one');
+      while (target.offsetWidth < 2000) {
+        target.appendChild(document.createTextNode('x'));
+      }
+    });
+    time('clever', () => {
+      let target = document.getElementById('two');
+      target.appendChild(document.createTextNode('xxxxx'));
+      let total = Math.ceil(2000 / (target.offsetWidth / 5));
+      target.firstChild.nodeValue = 'x'.repeat(total);
+    });
+  </script> -->
+  <script>
+    let img = document.querySelector('img');
+    let angle = Math.PI / 2;
+    function animate(time, lastTime) {
+      if (lastTime != null) {
+        angle += (time - lastTime) * 0.001;
+      }
+      img.style.top = (Math.sin(angle) * 20) + 'px';
+      img.style.left = (Math.cos(angle) * 200) + 'px';
+      requestAnimationFrame(newTime => animate(newTime, time));
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
