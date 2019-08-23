@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SandBox - Ch15</title>
+  <style>
+    .content {
+      display: none;
+    }
+    .contents .content:first-child {
+      display: block;
+    }
+    .trail { /* className for the trail elements */
+      position: absolute;
+      height: 6px; width: 6px;
+      border-radius: 3px;
+      background: teal;
+    }
+    body {
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center">SandBox - Ch15</h1>
+
+  <!-- <div class="tab">
+    <div class="controls">
+      <button data-ref="#contentOne">One</button>
+      <button data-ref="#contentTwo">Two</button>
+      <button data-ref="#contentThree">Three</button>
+    </div>
+    
+    <div class="contents">
+      <div id="contentOne" class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate esse alias tenetur sapiente iste dolorem quas illum similique vero.</div>
+      <div id="contentTwo" class="content">Sapiente repellat molestias eligendi molestiae, praesentium nobis temporibus rerum ipsum adipisci atque sint cum fuga, perspiciatis est ad omnis quisquam.</div>
+      <div id="contentThree" class="content">Libero maiores dolore sint aperiam suscipit nemo ex. Recusandae iusto necessitatibus iure! Cum dolore nobis quos. Necessitatibus officiis rerum hic?</div>
+    </div>    
+  </div> -->
+
+  <tab-panel>
+    <div data-tabname="one">Tab one</div>
+    <div data-tabname="two">Tab two</div>
+    <div data-tabname="three">Tab three</div>
+  </tab-panel>
+
+  <script src="./sandbox.js"></script>
+</body>
+</html>
