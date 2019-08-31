@@ -12,3 +12,9 @@ function max(...numbers) {
 let arrNum = [1, 2, 3];
 // console.log(max(10, ...arrNum, 4)); // 10
 console.log([0, ...arrNum, 4]); // [ 0, 1, 2, 3, 4 ];
+
+function rest(...paras) {
+  console.log(paras);
+}
+
+rest(arrNum);
