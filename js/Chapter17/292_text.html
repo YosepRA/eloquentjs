@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas Text</title>
+</head>
+<body>
+  <canvas></canvas>
+
+  <script>
+    let cx = document.querySelector('canvas').getContext('2d');
+    // context.font → style, size, font-family;
+    cx.font = '28px helvetica';
+    // textAlign → To set horizontal alignment based on assigned position. (start(default), center, end)
+    // cx.textAlign = 'center';
+    // cx.textBaseline = 'bottom';
+    cx.fillStyle = 'fuchsia';
+    cx.fillText('Canvas can also do some text boii..!!', 10, 50);
+  </script>
+</body>
+</html>

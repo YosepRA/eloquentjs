@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Curves</title>
+</head>
+<body>
+  <canvas></canvas>
+  <script>
+    let cx = document.querySelector('canvas').getContext('2d');
+    
+    // QUADRATIC CURVE
+    
+    // cx.beginPath();
+    // cx.moveTo(10, 90);
+    // // cx.lineTo(90, 90);
+    // // "quadraticCurveTo" will take first two arguments as a point where the line "atrracted" to, ~
+    // // ~ and the next two as a direction point.
+    // cx.quadraticCurveTo(50, 120, 90, 90);
+    // cx.lineTo(50, 10);
+    // cx.closePath();
+    // cx.stroke();
+
+    /* =============================================================================================== */
+
+    // BEZIER CURVE
+    // → Two points instead of quadratic's one.
+
+    // cx.beginPath();
+    // cx.moveTo(10, 90);
+    // // cx.lineTo(90, 90);
+    // cx.bezierCurveTo(30, 30, 60, 120, 70, 90);
+    // cx.lineTo(90, 10);
+    // cx.lineTo(10, 10);
+    // cx.closePath();
+    // cx.stroke();
+
+    /* =============================================================================================== */
+
+    // ARC
+    // → A way to draw a line around the circle's edge. This method makes it possible to draw only part ~
+    // ~ of circle.
+
+    cx.beginPath();
+    cx.arc(50, 50, 40, 0, 7);
+    // cx.moveTo(160, 50);
+    cx.arc(120, 50, 40, 0, 0.5 * Math.PI);
+    cx.stroke();
+  </script>
+</body>
+</html>

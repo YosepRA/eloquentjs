@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SVG</title>
+  <style>
+    svg {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <p>Normal HTML here.</p>
+  <!-- SVG is an XML-based dialect that focuses onto graphics rather than text. -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <circle r="50" cx="50" cy="50" fill="red" />
+    <rect x="120" y="5" width="90" height="90" stroke="blue" fill="none" />
+    <rect x="220" y="5" width="90" height="190" stroke="blue" fill="none" />
+  </svg>
+
+  <script>
+    // SVG will also create a DOM element. So we could also manipulate it through scripts.
+    let circle = document.querySelector('circle');
+    circle.setAttribute('fill', 'cyan');
+  </script>
+</body>
+</html>

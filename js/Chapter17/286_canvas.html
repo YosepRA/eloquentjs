@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+</head>
+<body>
+  <p>Before canvas</p>
+  <!-- Without "width" and "height" attribute, canvas default size is 300px width and 150px height -->
+  <canvas>
+    Oops, your browser doesn't support canvas.
+  </canvas>
+  <p>After canvas</p>
+
+  <script>
+    // let canvas = document.querySelector('canvas');
+    // let cx = canvas.getContext('2d');
+    // cx.fillStyle = 'red';
+    // cx.fillRect(10, 5, 100, 50);
+
+    /* =============================================================================================== */
+
+    let cx = document.querySelector('canvas').getContext('2d');
+    // The graphics will be drawn based on the preceding context properties.
+    cx.strokeStyle = 'blue';
+    cx.strokeRect(10, 10, 80, 80);
+    // We change the "strokeStyle" and "lineWidth" here and it will affect the next method that will use this ~
+    // ~ context.
+    cx.strokeStyle = 'red';
+    cx.lineWidth = 5;
+    cx.strokeRect(120, 10, 80, 80);
+  </script>
+</body>
+</html>

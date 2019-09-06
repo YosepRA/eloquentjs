@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transformation</title>
+</head>
+<body>
+  <canvas width="600" height="300"></canvas>
+
+  <script>
+    let cx = document.querySelector('canvas').getContext('2d');
+
+    // // context.scale(x, y): x → horizontal scale; y → vertical scale;
+    // cx.scale(3, .5); // This will make the next image to be scaled 3 times as wide and a half times as high.
+    // cx.beginPath();
+    // cx.arc(50, 50, 40, 0, 7);
+    // cx.lineWidth = 3;
+    // cx.stroke();
+
+    /* ==================================================================================================== */
+
+    // PLAYER SPRITE ANIMATION
+
+    function flipHorizontally(context, around) {
+      context.translate(around, 0);
+      context.scale(-1 ,1);
+      context.translate(-around, 0);
+    }
+
+    let img = document.createElement('img');
+    img.src = './assets/player.jpg';
+    let spriteW = 48, spriteH = 60;
+    img.addEventListener('load', () => {
+      flipHorizontally(cx, spriteW / 2);
+      cx.drawImage(img, 0, 0, spriteW, spriteH,
+                   0, 0, spriteW, spriteH);
+    });
+
+    /* ==================================================================================================== */
+
+    // // ROTATE AND TRANSLATE
+
+    // let img = document.createElement('img');
+    // img.src = 'assets/nanako.png';
+    // img.addEventListener('load', () => {
+    //   flipHorizontally(cx, img.width / 2);
+    //   cx.drawImage(img, 0, 0);
+    // });
+
+    /* ==================================================================================================== */
+
+    // // STORING AND CLEARING TRANSFORMATION
+
+    // function branch(length, angle, scale) {
+    //   cx.fillRect(0, 0, 1, length);
+    //   if (length < 8) return;
+    //   cx.save();
+    //   cx.translate(0, length);
+    //   cx.rotate(-angle);
+    //   branch(length * scale, angle, scale);
+    //   cx.rotate(2 * angle);
+    //   branch(length * scale, angle, scale);
+    //   cx.restore();
+    // }
+    // cx.translate(300, 0);
+    // branch(50, 0.5, 0.8);
+  </script>
+</body>
+</html>
