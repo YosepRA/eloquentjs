@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Text Fields</title>
+</head>
+<body>
+  <textarea name="bio" id="bio" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, commodi.</textarea>
+
+  <script>
+    let textarea = document.querySelector('textarea');
+    textarea.addEventListener('keydown', e => {
+      // If "F2" is pressed.
+      if (e.keyCode === 113) {
+        replaceSelection(textarea, 'Khasekwhemny');
+        e.preventDefault();
+      }
+    });
+    function replaceSelection(field, word) {
+      let from = field.selectionStart, to = field.selectionEnd;
+      field.value = field.value.slice(0, from) + word + field.value.slice(to);
+      field.selectionStart = from + word.length;
+      field.selectionEnd = from + word.length;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Radio Buttons</title>
+</head>
+<body>
+  <label><input type="radio" name="color" value="lightgreen">Light Green</label><br>
+  <label><input type="radio" name="color" value="aquamarine">Aquamarine</label><br>
+  <label><input type="radio" name="color" value="maroon">Maroon</label>
+
+  <script>
+    let color = document.querySelectorAll('input[name=color]');
+    for (const button of color) {
+      button.addEventListener('change', () => {
+        document.body.style.backgroundColor = button.value;
+      });
+    }
+  </script>
+</body>
+</html>

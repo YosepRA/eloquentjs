@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Input</title>
+</head>
+<body>
+  <input type="file" name="file" id="docs" multiple>
+
+  <script>
+    // let input = document.querySelector('input');
+    // input.addEventListener('change', () => {
+    //   if (input.files.length > 0) {
+    //     let file = input.files[0];
+    //     console.log(`Your file name is: ${file.name}`);
+    //     if (file.type) console.log(`And the type is ${file.type}`);
+    //   }
+    // });
+
+    /* ===================================================================================== */
+
+    // MULTIPLE
+
+    let input = document.querySelector('input');
+    input.addEventListener('change', () => {
+      for (const file of Array.from(input.files)) {
+        readFileText(file)
+          .then(result => console.log(`File: ${file.name} starts with "${result.slice(0, 20)}"`))
+          .catch(err => console.log(err));
+      }
+    });
+    function readFileText(file) {
+      return new Promise((resolve, reject) => {
+        let reader = new FileReader();
+        reader.addEventListener('load', () => resolve(reader.result));
+        reader.addEventListener('error', () => reject(reader.error));
+        reader.readAsText(file);
+      });
+    }
+  </script>
+</body>
+</html>

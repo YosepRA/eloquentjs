@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Reader</title>
+</head>
+<body>
+  <input type="file" name="pic" id="pic" onchange="previewFile()"><br>
+  <img src="" alt="Image preview...">
+
+  <script>
+    function previewFile() {
+      let preview = document.querySelector('img');
+      let file = document.querySelector('input[type=file]').files[0];
+      if (!file) return;
+      let reader = new FileReader();
+
+      reader.addEventListener('load', () => {
+        preview.src = reader.result;
+      });
+
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>

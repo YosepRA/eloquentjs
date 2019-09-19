@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form Focus</title>
+</head>
+<body>
+  <h1>Form Focus</h1>
+  <input type="text" name="go" id="lang">
+  <script>
+    document.querySelector('input').focus();
+    console.log(document.activeElement.tagName);
+    document.querySelector('input').blur();
+    console.log(document.activeElement.tagName);
+  </script>
+</body>
+</html>

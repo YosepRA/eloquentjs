@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form Property</title>
+</head>
+<body>
+  <form action="#">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name"><br>
+
+    <label for="pass">Password: </label>
+    <input type="password" name="password" id="pass"><br>
+
+    <button type="submit">Submit</button>
+
+    <script>
+      let form = document.querySelector('form');
+      // Forms have "elements" property that contain its input fields in an array-like object.
+      console.log(form.elements[1].type); // password
+      // It can also be accessed with its name attribute.
+      console.log(form.elements.name.type) // text
+      // In turn, input fields will have "form" property containing its form element wrapper.
+      console.log(form.elements.password.form === form); // true
+    </script>
+  </form>
+</body>
+</html>
