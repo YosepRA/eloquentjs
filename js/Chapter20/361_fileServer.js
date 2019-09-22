@@ -23,13 +23,13 @@ createServer((request, response) => {
     });
 }).listen(8000, () => console.log('Listening at port 8000'));
 
-// // Execute this function if there's no handler for certain type of request method.
-// async function notAllowed(request) {
-//   return {
-//     status: 405,
-//     body: `Method ${request.method} is not allowed`
-//   };
-// }
+// Execute this function if there's no handler for certain type of request method.
+async function notAllowed(request) {
+  return {
+    status: 405,
+    body: `Method ${request.method} is not allowed`
+  };
+}
 
 /* ======================================================================================================== */
 
